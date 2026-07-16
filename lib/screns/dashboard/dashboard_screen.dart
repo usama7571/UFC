@@ -97,6 +97,16 @@ class DashboardScreen extends StatelessWidget {
                 ),
 
                 Expanded(
+                  Padding(
+  padding: const EdgeInsets.all(20),
+  child: Text(
+    "Welcome Back, TEST 👋",
+    style: TextStyle(
+      fontSize: 26,
+      fontWeight: FontWeight.bold,
+    ),
+  ),
+),
 
                   child: Padding(
                     padding: const EdgeInsets.all(20),
