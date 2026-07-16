@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../widgets/dashboard_card.dart';
 
 class DashboardCard extends StatelessWidget {
   final String title;
@@ -29,28 +30,48 @@ class DashboardCard extends StatelessWidget {
             ],
           ),
         ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(icon, size: 45, color: Colors.white),
-            const SizedBox(height: 15),
-            Text(
-              value,
-              style: const TextStyle(
-                fontSize: 30,
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            const SizedBox(height: 8),
-            Text(
-              title,
-              textAlign: TextAlign.center,
-              style: const TextStyle(color: Colors.white70),
-            )
-          ],
-        ),
-      ),
-    );
-  }
-}
+        children: const [
+
+  DashboardCard(
+    title: "Active Members",
+    value: "258",
+    icon: Icons.people,
+    color: Colors.green,
+  ),
+
+  DashboardCard(
+    title: "Today's Attendance",
+    value: "173",
+    icon: Icons.qr_code_scanner,
+    color: Colors.blue,
+  ),
+
+  DashboardCard(
+    title: "Pending Renewal",
+    value: "07",
+    icon: Icons.warning,
+    color: Colors.orange,
+  ),
+
+  DashboardCard(
+    title: "Upcoming Renewal",
+    value: "19",
+    icon: Icons.calendar_month,
+    color: Colors.deepPurple,
+  ),
+
+  DashboardCard(
+    title: "Today's Income",
+    value: "245K",
+    icon: Icons.attach_money,
+    color: Colors.teal,
+  ),
+
+  DashboardCard(
+    title: "Today's Expense",
+    value: "61K",
+    icon: Icons.money_off,
+    color: Colors.red,
+  ),
+
+],
