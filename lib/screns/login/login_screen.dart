@@ -58,8 +58,14 @@ class LoginScreen extends StatelessWidget {
                     width: double.infinity,
                     height: 50,
                     child: ElevatedButton(
-                      onPressed: () {},
-                      child: const Text("LOGIN"),
+                      onPressed: () {
+  Navigator.pushReplacement(
+    context,
+    MaterialPageRoute(
+      builder: (_) => const DashboardScreen(),
+    ),
+  );
+},
                     ),
                   ),
                 ],
