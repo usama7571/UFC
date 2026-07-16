@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import '../dashboard/dashboard_screen.dart';
+final usernameController = TextEditingController();
+final passwordController = TextEditingController();
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
