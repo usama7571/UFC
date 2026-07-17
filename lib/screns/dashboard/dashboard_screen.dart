@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../members/member_screen.dart';
 
 class DashboardScreen extends StatelessWidget {
   const DashboardScreen({super.key});
@@ -54,6 +55,25 @@ class DashboardScreen extends StatelessWidget {
               ],
             ),
           ),
+          Widget menuItem(
+  BuildContext context,
+  IconData icon,
+  String title,
+  Widget screen,
+) {
+  return ListTile(
+    leading: Icon(icon, color: Colors.white),
+    title: Text(title),
+    onTap: () {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (_) => screen,
+        ),
+      );
+    },
+  );
+}
 
           /// Main Screen
 
@@ -191,6 +211,18 @@ class DashboardScreen extends StatelessWidget {
   }
 
 }
+menuItem(
+  context,
+  Icons.people,
+  "Members",
+  const MemberScreen(),
+),
+menuItem(
+  context,
+  Icons.dashboard,
+  "Dashboard",
+  const DashboardScreen(),
+),
 
 class DashboardCard extends StatelessWidget{
 
