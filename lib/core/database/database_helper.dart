@@ -85,3 +85,47 @@ class DatabaseHelper {
     return result.isNotEmpty;
   }
 }
+// ===================== MEMBERS ======================
+
+Future<int> insertMember(Map<String, dynamic> member) async {
+  final db = await database;
+
+  return await db.insert(
+    'members',
+    member,
+    conflictAlgorithm: ConflictAlgorithm.replace,
+  );
+}
+
+Future<List<Map<String, dynamic>>> getMembers() async {
+  final db = await database;
+
+  return await db.query(
+    'members',
+    orderBy: 'id DESC',
+  );
+}
+
+Future<int> updateMember(
+    int id,
+    Map<String, dynamic> member,
+    ) async {
+  final db = await database;
+
+  return await db.update(
+    'members',
+    member,
+    where: 'id=?',
+    whereArgs: [id],
+  );
+}
+
+Future<int> deleteMember(int id) async {
+  final db = await database;
+
+  return await db.delete(
+    'members',
+    where: 'id=?',
+    whereArgs: [id],
+  );
+}
